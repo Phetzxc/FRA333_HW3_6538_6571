@@ -57,7 +57,7 @@ pip  install  numpy  roboticstoolbox-python  spatialmath  scipy
 
   
 
-This script will test the Jacobian calculation, singularity detection, and torque computation using both the custom implementation and `roboticstoolbox`.
+This script will test the Jacobian calculation, singularity detection, and torque computation using both the custom implementation and `roboticstoolbox`. You can change value in `q_test` , `w_test` in testScript.py
 
   
 
