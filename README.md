@@ -197,7 +197,7 @@ In an RRR robotic system, singularities can be detected by examining the determi
 
   
 
-![image](https://github.com/user-attachments/assets/30d59144-fe21-425a-a7c7-aa344f57021c)
+![image](https://github.com/user-attachments/assets/f8266c74-af3a-492c-b2a7-7e769ab5c3f6)
 
 
   
@@ -226,7 +226,7 @@ The torque at the robot's joints can be calculated by applying the wrench to the
 
   
 
-![image](https://github.com/user-attachments/assets/989d958d-9628-40fa-a91b-e9c048c15d6e)
+![image](https://github.com/user-attachments/assets/30f3fd08-505c-4dab-b263-cf9a59082759)
 
   
 
@@ -269,22 +269,8 @@ The `jacob0(q)` function in `roboticstoolbox` computes the Jacobian matrix, whic
 The Jacobian matrix is calculated based on the forward kinematics of the robot, which establishes the relationship between the change in joint angles and the motion of the end-effector:
 
   
+![image](https://github.com/user-attachments/assets/8ae6631e-5f4a-46bd-9d98-2560a08da1f6)
 
-\[
-
-J(q) = rac{\partial X}{\partial q}
-
-\]
-
-  
-
-Where:
-
--  \( J(q) \) is the Jacobian matrix in the space frame.
-
--  \( X \) is the position and orientation vector of the end-effector.
-
--  \( q \) is the vector of joint angles.
 
   
 
@@ -316,11 +302,8 @@ The function `robot.is_singular(q)` uses the Jacobian matrix calculated by `jaco
 
   
 
-\[
+![image](https://github.com/user-attachments/assets/e56528a9-e7fb-4005-935d-47f1cfc770ae)
 
-ext{det}(J(q)) = 0
-
-\]
 
   
 
@@ -356,21 +339,8 @@ The function `robot.pay(q, wrench)` uses the Jacobian matrix \( J \) and the for
 
   
 
-\[
+![image](https://github.com/user-attachments/assets/d8598df0-53b8-47f6-891e-a86f03c39511)
 
-au = J^T \cdot F
-
-\]
-
-  
-
-Where:
-
--  \( au \) is the vector of joint torques.
-
--  \( J^T \) is the transpose of the Jacobian matrix.
-
--  \( F \) is the wrench (force and moment vector) applied to the end-effector.
 
   
 
