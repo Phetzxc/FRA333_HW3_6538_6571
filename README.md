@@ -253,7 +253,7 @@ Here’s a breakdown of the output from running `testScript.py`:
 
   
 
-### 1. Jacobian Matrix Calculation (External Function vs Roboticstoolbox)
+###Question 1 - Jacobian Matrix Calculation (External Function vs Roboticstoolbox)
 
   
 
@@ -335,7 +335,7 @@ This confirms that the two methods of calculating the Jacobian matrix yield resu
 
   
 
-### 2. Singularity Check
+### Question 2 - Singularity Check
 
   
 
@@ -378,7 +378,7 @@ Similarly, the `check_singularity` function from `roboticstoolbox` confirms that
 
   
 
-### 3. Joint Torque (τ) Calculation from Applied Wrench
+### Question 3 - Joint Torque (τ) Calculation from Applied Wrench
 
   
 
