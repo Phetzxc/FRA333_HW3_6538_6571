@@ -101,15 +101,6 @@ python testScript.py
 
 - The custom implementation in `FRA333_HW3_38_71.py` is compared with the `pay()` function in `roboticstoolbox`.
 
-  
-
-# Robotic Toolbox and Custom Solution for Jacobian, Singularity Detection, and Torque Calculation
-
-  
-
-This project compares custom solutions for calculating the Jacobian matrix, detecting singularities, and calculating joint torques (τ) with the equivalent capabilities provided by `roboticstoolbox`. Below are the details of both the custom and `roboticstoolbox` solutions.
-
-  
 
 ---
 
