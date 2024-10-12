@@ -408,6 +408,7 @@ Effort on each joint from roboticstoolbox (rounded to 3 decimals):
 [ 3.91 -0.93 -0.93]
 
 ```
+![image](https://github.com/user-attachments/assets/67b43595-4e37-4edd-9965-ee6fcdffb760)
 
   
 
