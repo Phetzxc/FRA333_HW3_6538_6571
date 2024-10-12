@@ -39,6 +39,7 @@ Make sure you have the following libraries installed:
 
 To install the dependencies, run:
 
+download this zip folder extract and open folder with VScode
   
 
 ```bash
