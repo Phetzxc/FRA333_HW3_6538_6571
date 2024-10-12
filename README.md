@@ -327,7 +327,8 @@ The Jacobian matrices are the same within the tolerance of ±0.01.
 
 This confirms that the two methods of calculating the Jacobian matrix yield results that are equivalent, with differences that fall within the specified tolerance of ±0.01.
 
-  
+  ![image](https://github.com/user-attachments/assets/ba0c2f1f-b80d-4e6b-adbb-ada092082c50)
+
 
 ---
 
