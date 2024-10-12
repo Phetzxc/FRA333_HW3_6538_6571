@@ -124,14 +124,9 @@ As shown in the image, the Jacobian matrix (\( J \)) is expressed as:
   <img src="https://github.com/user-attachments/assets/d3e33736-8749-45b8-a4b4-4de44050d6bd" />
 </p>  
 
-![image](https://github.com/user-attachments/assets/d3e33736-8749-45b8-a4b4-4de44050d6bd)
-
-  
-
-![image](https://github.com/user-attachments/assets/30581c9b-73a2-45ba-85cb-e7ba0402ef35)
-
-
-  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/30581c9b-73a2-45ba-85cb-e7ba0402ef35" />
+</p>  
 
 **Formula used in the code:**
 
@@ -140,12 +135,14 @@ As shown in the image, the Jacobian matrix (\( J \)) is expressed as:
 The Jacobian can be calculated by finding the derivatives of the position and orientation of the end-effector with respect to the joint angles \( q \):
 
   
-
-![image](https://github.com/user-attachments/assets/2f915a5e-7e75-4294-9810-c25149445dc8)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2f915a5e-7e75-4294-9810-c25149445dc8" />
+</p>  
 
   
-
-![image](https://github.com/user-attachments/assets/e7e60c5a-2c88-406f-9fe6-19cc2cd2ec84)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e7e60c5a-2c88-406f-9fe6-19cc2cd2ec84" />
+</p>  
 
 
   
@@ -185,9 +182,9 @@ In an RRR robotic system, singularities can be detected by examining the determi
 **Formula used for detection:**
 
   
-
-![image](https://github.com/user-attachments/assets/f8266c74-af3a-492c-b2a7-7e769ab5c3f6)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f8266c74-af3a-492c-b2a7-7e769ab5c3f6" />
+</p>  
 
   
 
@@ -215,7 +212,9 @@ The torque at the robot's joints can be calculated by applying the wrench to the
 
   
 
-![image](https://github.com/user-attachments/assets/30f3fd08-505c-4dab-b263-cf9a59082759)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/30f3fd08-505c-4dab-b263-cf9a59082759" />
+</p>  
 
   
 
@@ -258,8 +257,9 @@ The `jacob0(q)` function in `roboticstoolbox` computes the Jacobian matrix, whic
 The Jacobian matrix is calculated based on the forward kinematics of the robot, which establishes the relationship between the change in joint angles and the motion of the end-effector:
 
   
-![image](https://github.com/user-attachments/assets/8ae6631e-5f4a-46bd-9d98-2560a08da1f6)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8ae6631e-5f4a-46bd-9d98-2560a08da1f6" />
+</p>  
 
   
 
@@ -291,8 +291,9 @@ The function `robot.is_singular(q)` uses the Jacobian matrix calculated by `jaco
 
   
 
-![image](https://github.com/user-attachments/assets/68d266b5-4932-4458-85ac-f606d4a0da73)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/68d266b5-4932-4458-85ac-f606d4a0da73" />
+</p>  
 
   
 
@@ -328,8 +329,9 @@ The function `robot.pay(q, wrench)` uses the Jacobian matrix \( J \) and the for
 
   
 
-![image](https://github.com/user-attachments/assets/d8598df0-53b8-47f6-891e-a86f03c39511)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d8598df0-53b8-47f6-891e-a86f03c39511" />
+</p>  
 
   
 
@@ -449,8 +451,9 @@ The Jacobian matrices are the same within the tolerance of ±0.01.
 ```
 
 
-  ![image](https://github.com/user-attachments/assets/ba0c2f1f-b80d-4e6b-adbb-ada092082c50)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ba0c2f1f-b80d-4e6b-adbb-ada092082c50" />
+</p>  
 
 This confirms that the two methods of calculating the Jacobian matrix yield results that are equivalent, with differences that fall within the specified tolerance of ±0.01.
 
@@ -492,8 +495,9 @@ Singularity Status from roboticstoolbox (True=Yes, False=No): False
 
 ```
 
-  
-![image](https://github.com/user-attachments/assets/462ec039-b4f5-4d44-827d-6a661b3e5fd4)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/462ec039-b4f5-4d44-827d-6a661b3e5fd4" />
+</p>   
 
 Similarly, the `check_singularity` function from `roboticstoolbox` confirms that there is **no singularity** in the robot's configuration (`False` means no singularity detected).
 
@@ -536,8 +540,9 @@ Effort on each joint from roboticstoolbox (rounded to 3 decimals):
 [ 3.91 -0.93 -0.93]
 
 ```
-![image](https://github.com/user-attachments/assets/750fd2d0-94cd-47ea-a606-f9dc57f1bb68)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/750fd2d0-94cd-47ea-a606-f9dc57f1bb68" />
+</p>   
   
 
 The result is identical to the custom function, as `roboticstoolbox` uses the same method (Jacobian transpose) to compute the joint torques. The consistency between the two methods confirms that both approaches are correct.
