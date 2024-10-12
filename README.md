@@ -135,21 +135,12 @@ As shown in the image, the Jacobian matrix (\( J \)) is expressed as:
 
   
 
-\[
-
-J = egin{bmatrix} J_v \ J_w \end{bmatrix}
-
-\]
+![image](https://github.com/user-attachments/assets/d3e33736-8749-45b8-a4b4-4de44050d6bd)
 
   
 
-Where:
+![image](https://github.com/user-attachments/assets/30581c9b-73a2-45ba-85cb-e7ba0402ef35)
 
--  \( J_v \) is the linear Jacobian.
-
--  \( J_w \) is the angular Jacobian.
-
--  \( J \) is the overall Jacobian matrix.
 
   
 
@@ -161,27 +152,12 @@ The Jacobian can be calculated by finding the derivatives of the position and or
 
   
 
-\[
-
-J_v(q) = rac{\partial X_v}{\partial q}
-
-\]
-
-\[
-
-J_w(q) = rac{\partial X_w}{\partial q}
-
-\]
+![image](https://github.com/user-attachments/assets/2f915a5e-7e75-4294-9810-c25149445dc8)
 
   
 
-Where:
+![image](https://github.com/user-attachments/assets/e7e60c5a-2c88-406f-9fe6-19cc2cd2ec84)
 
--  \( X_v \) is the position vector of the end-effector.
-
--  \( X_w \) is the orientation vector of the end-effector.
-
--  \( q \) is the joint angle vector.
 
   
 
@@ -221,15 +197,8 @@ In an RRR robotic system, singularities can be detected by examining the determi
 
   
 
-\[
+![image](https://github.com/user-attachments/assets/30d59144-fe21-425a-a7c7-aa344f57021c)
 
-ext{det}(J_v) = 0
-
-\]
-
-  
-
-If \( ext{det}(J_v) \) equals zero, the robot is in a singularity, causing it to lose some degrees of freedom.
 
   
 
@@ -257,23 +226,7 @@ The torque at the robot's joints can be calculated by applying the wrench to the
 
   
 
-\[
-
-au = J_v^T \cdot F + J_w^T \cdot M
-
-\]
-
-  
-
-Where:
-
--  \( au \) is the vector of joint torques.
-
--  \( J_v^T \) and \( J_w^T \) are the transposes of the linear and angular Jacobians.
-
--  \( F \) is the force applied to the end-effector.
-
--  \( M \) is the moment applied to the end-effector.
+![image](https://github.com/user-attachments/assets/989d958d-9628-40fa-a91b-e9c048c15d6e)
 
   
 
