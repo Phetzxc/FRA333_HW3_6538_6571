@@ -549,6 +549,6 @@ The result is identical to the custom function, as `roboticstoolbox` uses the sa
 <p align="center">
   <img src="https://github.com/user-attachments/assets/67b43595-4e37-4edd-9965-ee6fcdffb760" />
 </p> 
----
+
 
  
