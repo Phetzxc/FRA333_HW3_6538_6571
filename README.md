@@ -103,6 +103,18 @@ python testScript.py
 
   
 
+# Robotic Toolbox and Custom Solution for Jacobian, Singularity Detection, and Torque Calculation
+
+  
+
+This project compares custom solutions for calculating the Jacobian matrix, detecting singularities, and calculating joint torques (τ) with the equivalent capabilities provided by `roboticstoolbox`. Below are the details of both the custom and `roboticstoolbox` solutions.
+
+  
+
+---
+
+  
+
 ## Custom Solution Details
 
   
@@ -111,11 +123,69 @@ python testScript.py
 
   
 
-In `FRA333_HW3_38_71.py`, the Jacobian matrix is computed using the robot’s forward kinematics, and the result is compared with the output from `roboticstoolbox`. The `compare_jacobians()` function checks if the results from both solutions are within a tolerance of ±0.01.
+In `FRA333_HW3_38_71.py`, the Jacobian matrix is computed using the forward kinematics of an RRR (Revolute-Revolute-Revolute) robot. The Jacobian matrix can be divided into two main parts:
+
+-  \( J_v \): The part that relates the linear velocity of the end-effector to the joint velocities.
+
+-  \( J_w \): The part that relates the angular velocity of the end-effector to the joint velocities.
 
   
 
-**Example:**
+As shown in the image, the Jacobian matrix (\( J \)) is expressed as:
+
+  
+
+\[
+
+J = egin{bmatrix} J_v \ J_w \end{bmatrix}
+
+\]
+
+  
+
+Where:
+
+-  \( J_v \) is the linear Jacobian.
+
+-  \( J_w \) is the angular Jacobian.
+
+-  \( J \) is the overall Jacobian matrix.
+
+  
+
+**Formula used in the code:**
+
+  
+
+The Jacobian can be calculated by finding the derivatives of the position and orientation of the end-effector with respect to the joint angles \( q \):
+
+  
+
+\[
+
+J_v(q) = rac{\partial X_v}{\partial q}
+
+\]
+
+\[
+
+J_w(q) = rac{\partial X_w}{\partial q}
+
+\]
+
+  
+
+Where:
+
+-  \( X_v \) is the position vector of the end-effector.
+
+-  \( X_w \) is the orientation vector of the end-effector.
+
+-  \( q \) is the joint angle vector.
+
+  
+
+**Example usage:**
 
   
 
@@ -127,15 +197,43 @@ J_e = endEffectorJacobianHW3(q_test)
 
   
 
+To compare the Jacobian matrix with the result from `roboticstoolbox`:
+
+  
+
+```python
+
+J_toolbox = robot.jacob0(q_test)
+
+```
+
+  
+
 ### 2. Singularity Detection
 
   
 
-The `checkSingularityHW3()` function checks if the Jacobian matrix is singular by evaluating its determinant. This is compared with the singularity detection in `roboticstoolbox`.
+In an RRR robotic system, singularities can be detected by examining the determinant of the Jacobian matrix, particularly the determinant of \( J_v \) (the linear part). If the determinant equals zero, it indicates that the robot is in a singular configuration, meaning it loses its ability to move freely in certain directions.
 
   
 
-**Example:**
+**Formula used for detection:**
+
+  
+
+\[
+
+ext{det}(J_v) = 0
+
+\]
+
+  
+
+If \( ext{det}(J_v) \) equals zero, the robot is in a singularity, causing it to lose some degrees of freedom.
+
+  
+
+**Example usage:**
 
   
 
@@ -151,11 +249,35 @@ singularity = checkSingularityHW3(q_test)
 
   
 
-The `computeEffortHW3()` function calculates the joint torques based on the wrench applied at the end-effector.
+The torque at the robot's joints can be calculated by applying the wrench to the end-effector and using the Jacobian matrix. The calculation uses the transpose of both the linear Jacobian (\( J_v \)) and the angular Jacobian (\( J_w \)) to transform the wrench from the end-effector to the joint torques.
 
   
 
-**Example:**
+**Formula used for torque calculation:**
+
+  
+
+\[
+
+au = J_v^T \cdot F + J_w^T \cdot M
+
+\]
+
+  
+
+Where:
+
+-  \( au \) is the vector of joint torques.
+
+-  \( J_v^T \) and \( J_w^T \) are the transposes of the linear and angular Jacobians.
+
+-  \( F \) is the force applied to the end-effector.
+
+-  \( M \) is the moment applied to the end-effector.
+
+  
+
+**Example usage:**
 
   
 
@@ -167,19 +289,49 @@ tau = computeEffortHW3(q_test, wrench)
 
   
 
+---
+
+  
+
 ## Roboticstoolbox Solution Details
 
   
 
-The `roboticstoolbox` solution provides the following capabilities:
+In `roboticstoolbox`, there are built-in functions for computing the Jacobian matrix, detecting singularities, and calculating joint torques. These functions simplify the process and allow for quick calculations without manually deriving the equations.
 
   
 
-1.  **Jacobian Calculation:**
+### 1. Jacobian Calculation
 
   
 
-Use the `jacob0()` method from `roboticstoolbox` to compute the Jacobian matrix for the robot.
+The `jacob0(q)` function in `roboticstoolbox` computes the Jacobian matrix, which relates the joint velocities to the linear and angular velocities of the end-effector in the space frame.
+
+  
+
+**Formula used in Roboticstoolbox:**
+
+  
+
+The Jacobian matrix is calculated based on the forward kinematics of the robot, which establishes the relationship between the change in joint angles and the motion of the end-effector:
+
+  
+
+\[
+
+J(q) = rac{\partial X}{\partial q}
+
+\]
+
+  
+
+Where:
+
+-  \( J(q) \) is the Jacobian matrix in the space frame.
+
+-  \( X \) is the position and orientation vector of the end-effector.
+
+-  \( q \) is the vector of joint angles.
 
   
 
@@ -195,19 +347,31 @@ J = robot.jacob0(q_test)
 
   
 
-2.  **Singularity Detection:**
+### 2. Singularity Detection
 
   
 
-Use the custom `check_singularity()` function in `roboticstoolbox` to check if the robot is in a singular configuration.
+`roboticstoolbox` provides the `is_singular(q)` function to detect whether the robot is in a singular configuration by examining the determinant of the Jacobian matrix. If the determinant is close to zero, the robot is in a singularity, losing certain degrees of freedom.
 
   
 
-3.  **Torque Calculation:**
+**Formula used in Roboticstoolbox:**
 
   
 
-Use the `pay()` method in `roboticstoolbox` to compute the joint torques from the applied wrench.
+The function `robot.is_singular(q)` uses the Jacobian matrix calculated by `jacob0(q)` and checks whether \( ext{det}(J) = 0 \). If the determinant is zero, the robot is in a singular configuration.
+
+  
+
+\[
+
+ext{det}(J(q)) = 0
+
+\]
+
+  
+
+If the determinant of the Jacobian matrix is zero, the system identifies the robot as being in singularity.
 
   
 
@@ -217,10 +381,59 @@ Use the `pay()` method in `roboticstoolbox` to compute the joint torques from th
 
 ```python
 
-tau = robot.pay(q_test, wrench)
+singularity_toolbox = robot.is_singular(q_test)
 
 ```
 
+  
+
+### 3. Torque Calculation (τ)
+
+  
+
+The `pay()` function in `roboticstoolbox` computes the joint torques by taking the wrench applied to the end-effector and using the Jacobian matrix to transform that force into joint torques.
+
+  
+
+**Formula used in Roboticstoolbox:**
+
+  
+
+The function `robot.pay(q, wrench)` uses the Jacobian matrix \( J \) and the force \( F \) to compute the torque (\( au \)) at the joints by using the transpose of the Jacobian matrix:
+
+  
+
+\[
+
+au = J^T \cdot F
+
+\]
+
+  
+
+Where:
+
+-  \( au \) is the vector of joint torques.
+
+-  \( J^T \) is the transpose of the Jacobian matrix.
+
+-  \( F \) is the wrench (force and moment vector) applied to the end-effector.
+
+  
+
+**Example:**
+
+  
+
+```python
+
+tau_toolbox = robot.pay(q_test, wrench)
+
+```
+
+  
+
+---
   
 
 ## Comparison of the Two Solutions
