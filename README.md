@@ -120,7 +120,9 @@ In `FRA333_HW3_38_71.py`, the Jacobian matrix is computed using the forward kine
 
 As shown in the image, the Jacobian matrix (\( J \)) is expressed as:
 
-  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d3e33736-8749-45b8-a4b4-4de44050d6bd" />
+</p>  
 
 ![image](https://github.com/user-attachments/assets/d3e33736-8749-45b8-a4b4-4de44050d6bd)
 
