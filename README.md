@@ -38,8 +38,6 @@ Make sure you have the following libraries installed:
   
 
 To install the dependencies, run:
-
-download this zip folder extract and open folder with VScode
   
 
 ```bash
@@ -48,7 +46,8 @@ pip  install  numpy  roboticstoolbox-python  spatialmath  scipy
 
 ```
 
-  
+download this zip folder extract and open folder with VScode
+
 
 ## How to Run the Project
 
