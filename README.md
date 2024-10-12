@@ -323,11 +323,12 @@ The Jacobian matrices are the same within the tolerance of ±0.01.
 
 ```
 
-  
+
+  ![image](https://github.com/user-attachments/assets/ba0c2f1f-b80d-4e6b-adbb-ada092082c50)
+
 
 This confirms that the two methods of calculating the Jacobian matrix yield results that are equivalent, with differences that fall within the specified tolerance of ±0.01.
 
-  ![image](https://github.com/user-attachments/assets/ba0c2f1f-b80d-4e6b-adbb-ada092082c50)
 
 
 ---
@@ -367,6 +368,7 @@ Singularity Status from roboticstoolbox (True=Yes, False=No): False
 ```
 
   
+![image](https://github.com/user-attachments/assets/462ec039-b4f5-4d44-827d-6a661b3e5fd4)
 
 Similarly, the `check_singularity` function from `roboticstoolbox` confirms that there is **no singularity** in the robot's configuration (`False` means no singularity detected).
 
@@ -409,14 +411,13 @@ Effort on each joint from roboticstoolbox (rounded to 3 decimals):
 [ 3.91 -0.93 -0.93]
 
 ```
-![image](https://github.com/user-attachments/assets/67b43595-4e37-4edd-9965-ee6fcdffb760)
+![image](https://github.com/user-attachments/assets/750fd2d0-94cd-47ea-a606-f9dc57f1bb68)
 
   
 
 The result is identical to the custom function, as `roboticstoolbox` uses the same method (Jacobian transpose) to compute the joint torques. The consistency between the two methods confirms that both approaches are correct.
 
-  
-
+![image](https://github.com/user-attachments/assets/67b43595-4e37-4edd-9965-ee6fcdffb760)
 ---
 
  
