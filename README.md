@@ -546,8 +546,9 @@ Effort on each joint from roboticstoolbox (rounded to 3 decimals):
   
 
 The result is identical to the custom function, as `roboticstoolbox` uses the same method (Jacobian transpose) to compute the joint torques. The consistency between the two methods confirms that both approaches are correct.
-
-![image](https://github.com/user-attachments/assets/67b43595-4e37-4edd-9965-ee6fcdffb760)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/67b43595-4e37-4edd-9965-ee6fcdffb760" />
+</p> 
 ---
 
  
