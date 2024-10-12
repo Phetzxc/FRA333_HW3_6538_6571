@@ -125,10 +125,6 @@ This project compares custom solutions for calculating the Jacobian matrix, dete
 
 In `FRA333_HW3_38_71.py`, the Jacobian matrix is computed using the forward kinematics of an RRR (Revolute-Revolute-Revolute) robot. The Jacobian matrix can be divided into two main parts:
 
--  \( J_v \): The part that relates the linear velocity of the end-effector to the joint velocities.
-
--  \( J_w \): The part that relates the angular velocity of the end-effector to the joint velocities.
-
   
 
 As shown in the image, the Jacobian matrix (\( J \)) is expressed as:
