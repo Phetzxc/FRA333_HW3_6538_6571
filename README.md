@@ -286,7 +286,7 @@ J = robot.jacob0(q_test)
 
   
 
-`roboticstoolbox` provides the `is_singular(q)` function to detect whether the robot is in a singular configuration by examining the determinant of the Jacobian matrix. If the determinant is close to zero, the robot is in a singularity, losing certain degrees of freedom.
+`roboticstoolbox` provides the `is_singular(q)` function to detect whether the robot is in a singular configuration by evaluate whether the Jacobian matrix loses rank in a particular configuration. If the Jacobian matrix loses rank, the robot enters a singular configuration.
 
   
 
@@ -294,11 +294,11 @@ J = robot.jacob0(q_test)
 
   
 
-The function `robot.is_singular(q)` uses the Jacobian matrix calculated by `jacob0(q)` and checks whether \( ext{det}(J) = 0 \). If the determinant is zero, the robot is in a singular configuration.
+The function `robot.is_singular(q)` uses the Jacobian matrix calculated by `jacob0(q)` and checks whether. If the determinant is zero, the robot is in a singular configuration.
 
   
 
-![image](https://github.com/user-attachments/assets/e56528a9-e7fb-4005-935d-47f1cfc770ae)
+![image](https://github.com/user-attachments/assets/68d266b5-4932-4458-85ac-f606d4a0da73)
 
 
   
